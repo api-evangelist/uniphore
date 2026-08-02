@@ -1,0 +1,82 @@
+generated: '2026-08-02'
+method: searched
+source: probed /.well-known/ on every Uniphore host discovered in apis.yml
+note: >-
+  Uniphore publishes no /.well-known/ documents on www.uniphore.com,
+  api.uniphore.com (Kong gateway, answers "no Route matched with those values"),
+  support.uniphore.com, or uniphore.github.io. The only live discovery surface is
+  Uniphore's dedicated Auth0 identity tenant, uniphore.us.auth0.com, which serves
+  anonymous OIDC / RFC 8414 discovery. All three documents below were saved verbatim.
+hosts:
+- host: https://uniphore.us.auth0.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    content_type: application/json
+    file: uniphore-openid-configuration.json
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    content_type: application/json
+    file: uniphore-oauth-authorization-server.json
+  - path: /.well-known/jwks.json
+    status: 200
+    content_type: application/json
+    file: uniphore-jwks.json
+- host: https://www.uniphore.com
+  documents:
+  - path: /llms.txt
+    status: 200
+    content_type: text/plain
+    file: ../llms/uniphore-llms.txt
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://api.uniphore.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://support.uniphore.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://uniphore.github.io
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+security_txt: none
+api_catalog: none
+agent_card: none
+x-evidence:
+  fetched: '2026-08-02'
+  probe: HTTP GET, User-Agent desktop Chrome, follow redirects

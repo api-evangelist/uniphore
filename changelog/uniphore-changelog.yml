@@ -1,0 +1,53 @@
+generated: '2026-08-02'
+method: searched
+source: https://github.com/uniphore/chronos-releases/releases
+note: >-
+  Uniphore publishes no product changelog or release-notes page for the Business
+  AI Cloud platform on uniphore.com, and the customer portal
+  (support.uniphore.com) is login-gated. The only public, dated release stream
+  is the GitHub Releases feed for Chronos, Uniphore's Enterprise Process
+  Discovery desktop tool. Recent window captured below; release bodies are
+  download-only and carry no itemised change notes.
+scheme: semver
+current_version: v0.2.4
+product: Chronos — Enterprise Process Discovery Tool
+feed: https://github.com/uniphore/chronos-releases/releases.atom
+entries:
+- version: v0.2.4
+  date: '2026-06-01'
+  breaking: false
+  highlights: [Installer refresh across Windows, macOS (Intel + Apple Silicon) and Linux]
+- version: v0.2.3
+  date: '2026-05-01'
+  breaking: false
+  highlights: [Installer refresh]
+- version: v0.2.2
+  date: '2026-04-20'
+  breaking: false
+  highlights: [Installer refresh]
+- version: v0.2.1
+  date: '2026-04-15'
+  breaking: false
+  highlights: [Installer refresh]
+- version: v0.2.0
+  date: '2026-04-06'
+  breaking: unknown
+  highlights: [Minor version bump]
+- version: v0.1.1
+  date: '2026-03-02'
+  breaking: false
+  highlights: [Installer refresh]
+- version: v0.1.0
+  date: '2026-01-22'
+  breaking: false
+  highlights: [First public release]
+platform_release_notes:
+  published: false
+  note: >-
+    BAIC chart + image releases are announced privately by the customer's
+    Uniphore account team, per the BAIC Installation Guide day-2 upgrade
+    section; chart 0.1.2 is the version documented publicly.
+x-evidence:
+- url: https://api.github.com/repos/uniphore/chronos-releases/releases
+  http_status: 200
+  fetched: '2026-08-02'

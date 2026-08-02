@@ -1,0 +1,135 @@
+﻿# Uniphore: The Business AI Company
+
+> Uniphore is The Business AI Company — enabling enterprises to rapidly adopt, significantly transform, and immediately unlock value through the Business AI Cloud: a sovereign, composable, and secure AI platform that unifies data, knowledge, models, and agents across the enterprise. Trusted by 2,000+ global businesses, including Fortune 500 companies in financial services, healthcare, telecom, and retail. Backed by NVIDIA, AMD, Snowflake, and Databricks. Named a Leader in the 2026 Gartner® Magic Quadrant™ for Customer Data Platforms and the 2025 IDC MarketScape for Retail CDPs. Recognized in the Forrester Wave for Customer Data Platforms.
+
+## Platform: Business AI Cloud
+
+- [Business AI Cloud Overview](https://www.uniphore.com/platform/business-aicloud/): Uniphore's sovereign, composable, and secure AI platform that unifies data, knowledge, models, and agents to empower business and IT teams to deploy scalable, enterprise-grade AI solutions.
+
+- [Agentic Layer](https://www.uniphore.com/platform/business-ai-cloud/agentic-layer/): No-code workflow and orchestration layer for building, launching, and managing AI agents that automate business processes with visual design, agent collaboration, and flexible data and model integration. Enhanced by the acquisition of Orby AI (Large Action Models and agentic process discovery) and Autonom8 (intelligent process automation).
+
+- [Model Layer](https://www.uniphore.com/platform/business-ai-cloud/modellayer/): Enables enterprises to adapt, manage, and fine-tune AI models — including small language models (SLMs) — without vendor lock-in, supporting custom use cases and enterprise scalability.
+
+- [Knowledge Layer](https://www.uniphore.com/platform/business-ai-cloud/knowledge-layer/): Structures, contextualizes, and delivers trusted enterprise information to avoid AI hallucinations and improve accuracy across AI-powered applications.
+
+- [Data Layer](https://www.uniphore.com/platform/business-ai-cloud/data-layer/): Secure, unified access to enterprise data enabling AI adoption without costly migrations while ensuring compliance, speed, and scalability. Supports Zero Data AI — leveraging AI without moving or copying underlying data.
+
+## Products: Marketing AI
+
+- [CDP Agent](https://www.uniphore.com/products/marketing-ai/cdp-agent/): Composable architecture that activates customer data anywhere in the customer experience, integrating with your AI stack to drive tailored interactions, deepen engagement, and boost revenue.
+
+## Products: Sales AI
+
+- [Sales Interaction Agent](https://www.uniphore.com/products/sales-ai/sales-interaction-agent/): Guides revenue teams with AI-powered insights, offering clarity on how to effectively keep prospects engaged and deals moving forward.
+
+## Products: People AI
+
+- [Recruiting Agent](https://www.uniphore.com/products/people-ai/recruiting-agent/): AI recruiting software that streamlines hiring by analyzing candidate data to improve decision-making and enhance recruitment efficiency.
+
+## Company & Credibility
+
+- [About Uniphore](https://www.uniphore.com/company/about-us/): Uniphore is The Business AI Company, founded in 2008 and serving 2,000+ global enterprises including Fortune 500 companies across financial services, healthcare, telecom,
+retail, and technology industries.
+
+- [Recognition & Awards](https://www.uniphore.com/company/recognition/): Analyst recognition, industry awards, and third-party validation of Uniphore's Business AI Cloud leadership, including the 2026 Gartner Magic Quadrant (CDP Leader), 2025 IDC MarketScape (CDP Leader), Forrester Wave (CDP Leader), and Deloitte Technology Fast 500.
+
+- [Gartner Magic Quadrant: CDP Leader 2026](https://www.uniphore.com/blog/gartner-magic-quadrant-cdp-report/): Uniphore named a Leader in the 2026 Gartner® Magic Quadrant™ for Customer Data Platforms.
+
+- [Series F: $260M from NVIDIA, AMD, Snowflake, and Databricks](https://www.uniphore.com/blog/ai-and-data-leaders-invest-in-uniphore-to-acceleratebusiness-ai/): Uniphore raised $260M at a $2.5B valuation to accelerate Business AI leadership, backed by NVIDIA, AMD, Snowflake, Databricks, NEA, and March Capital.
+
+- [KPMG Strategic Relationship](https://www.uniphore.com/press-releases/kpmg-enters-strategic-relationship-with-uniphore-to-build-ai-agents-powered-byindustry-specific-fine-tuned-small-language-models/): KPMG and Uniphore partnered to build and operationalize AI agents using industry-specific small language models across internal and client-facing workflows.
+
+- [Acquisitions: Orby AI and Autonom8](https://www.uniphore.com/press-releases/uniphore-announces-the-acquisitions-of-orby-ai-and-autonom8/): Uniphore acquired Orby AI (Large Action Models, agentic process discovery) and Autonom8 (intelligent process automation) to accelerate the agentic capabilities of the Business AI Cloud.
+
+- [Partners](https://www.uniphore.com/company/partners/): Strategic partnerships with KPMG, Cognizant, Snowflake, Databricks, NVIDIA, AMD, and AWS to accelerate enterprise AI adoption and deployment.
+
+- [Customer Testimonials](https://www.uniphore.com/company/testimonials/): Enterprise customer success stories from Fortune 500 companies across financial services, telecom, healthcare, and retail industries.
+
+## Customer Success
+
+- [Case Studies](https://www.uniphore.com/resources/case-studies/): Detailed customer outcomes including measurable ROI, efficiency gains, and AI-driven transformation across enterprise deployments.
+
+## Press Releases & News
+
+- [Uniphore Launches Business AI Cloud](https://www.uniphore.com/press-releases/uniphore-launches-business-ai-cloud-a-sovereign-composable-secure-ai-platform-to-power-the-agentic-enterprise/): Official launch announcement of the Business AI Cloud — a sovereign, composable, and secure AI platform bridging the divide between IT and business users. Includes the Agentic Layer with prebuilt enterprise-grade agents and BPMN-based workflow orchestration.
+
+- [Series F Close: NVIDIA, AMD, Snowflake, Databricks](https://www.uniphore.com/press-releases/nvidia-amd-snowflake-databricks-invest-inuniphores-series-f/): $260M Series F announcement with participation from NVIDIA, AMD, Snowflake, Databricks, NEA, March Capital, and others at a $2.5B valuation.
+
+- [KPMG Partners with Uniphore on AI Agents](https://www.uniphore.com/press-releases/kpmg-enters-strategic-relationship-with-uniphore-to-build-ai-agents-powered-by-industry-specific-fine-tuned-small-language-models/): KPMG and
+Uniphore announce a strategic relationship to build AI agents powered by industry-specific fine-tuned small language models.
+
+- [Cognizant and Uniphore Partner for Domain-Specific Enterprise AI](https://www.uniphore.com/press-releases/cognizant-and-uniphore-partner-to-deliver-smarter-domain-specific-ai-for-the-enterprise/): Strategic partnership to codevelop industry-specific AI solutions combining small language models and prebuilt AI agents, with initial focus on Life Sciences and Banking & Capital Markets.
+
+- [Rackspace and Uniphore: Infrastructure-to-Agents Architecture](https://www.uniphore.com/press-releases/rackspace-and-uniphore-announce-strategic-partnership-to-define-a-new-category-of-infrastructure-to-agents-architectureaccelerating-enterprise-ai-adoption/): Strategic partnership delivering the industry's first Infrastructure-to-Agents architecture — integrating Uniphore's Business AI Cloud with Rackspace's private cloud to offer sovereign, governed enterprise AI as an outcomes-based service.
+
+- [Inc.'s 2025 Best in Business: Best AI](https://www.uniphore.com/press-releases/incs-2025-best-in-business-list-in-best-ai/): Uniphore recognized on Inc.'s 2025 Best in Business list in the Best AI category.
+
+- [CEO Umesh Sachdev Named AI Innovator of the Year](https://www.uniphore.com/press-releases/ceo-and-co-founder-umesh-sachdev-named-ai-innovator-of-the-year/): Uniphore co-founder and CEO Umesh Sachdev recognized as AI Innovator of the Year.
+
+- [Newsroom](https://www.uniphore.com/newsroom/): Full archive of Uniphore press releases, media coverage, and company announcements.
+
+## Analyst Reports
+- [Gartner Magic Quadrant for CDPs 2026](https://www.uniphore.com/blog/gartner-magic-quadrant-cdp-report/): Uniphore named a Leader in the 2026 Gartner® Magic Quadrant™ for Customer Data Platforms.
+
+- [IDC MarketScape: Retail Customer Data Platforms 2025](https://www.uniphore.com/blog/uniphore-named-a-leader-in-the-2025-idc-marketscapefor-retail-customer-data-platforms/): Uniphore named a Leader in the 2025 IDC MarketScape for Retail Customer Data Platforms, recognized for composable architecture, AI-first approach, and rapid time-to-value.
+
+- [IDC MarketScape: Worldwide CDPs for B2C Users 2024-2025](https://www.uniphore.com/resources/analyst-reports/idc-marketscape-b2c-cdp/): Full IDC analyst report recognizing Uniphore's AI-first CDP for B2C enterprise use cases.
+
+- [Forrester Wave: Customer Data Platforms for B2C](https://www.uniphore.com/resources/analyst-reports/the-forrester-wave-customer-data-platforms-for-b2c-cdp/): Uniphore recognized in the Forrester Wave for Customer Data Platforms, noted for AI capabilities, usability, and enterprise IT support.
+
+- [All Analyst Reports](https://www.uniphore.com/resources/analyst-reports/): Full archive of third-party analyst recognition and reports covering Business AI Cloud, CDP, conversational AI, and contact center intelligence.
+
+## White Papers & Research
+
+- [The SLM Revolution](https://www.uniphore.com/resources/white-papers/the-slm-revolution/): How small language models (SLMs) and retrieval-augmented fine-tuning (RAFT) are enabling more accurate, cost-effective, and enterprise-safe AI deployments than general-purpose LLMs.
+
+- [Differentiating Large Action Models and Large Language Models](https://www.uniphore.com/resources/white-papers/differentiating-large-action-models-large-language-models/): Technical white paper distinguishing LLMs (text generation) from Large Action Models (LAMs), which execute multi-step business workflows — the backbone of Uniphore's Agentic Layer.
+
+- [All White Papers](https://www.uniphore.com/resources/white-papers/): Research and technical papers covering agentic AI, conversational intelligence, Zero Data AI, small language models, and enterprise AI deployment.
+
+- [Guides & Frameworks](https://www.uniphore.com/resources/guides/): Practical enterprise AI implementation guides covering use cases across customer service, marketing, and business process automation.
+
+## Key Concepts
+
+- [Small Language Models (SLMs)] (https://www.uniphore.com/insights/small-language-models-slms/): Small language models (SLMs) deliver fast, costefficient AI for enterprises. Learn how SLMs power secure, scalable AI deployments.
+
+- [Sovereign AI] (https://www.uniphore.com/insights/sovereign-ai/): Sovereign AI explained: what it is, why it matters, and how enterprises gain control over data, models, and infrastructure to drive secure, compliant AI innovation.
+
+- [Composable AI] (https://www.uniphore.com/insights/composable-ai/): Composable AI is a flexible, model-agnostic enterprise architecture that enables zero-copy data access, faster deployment, and AI at scale—without vendor lockin.
+
+- [What is Zero Data AI?](https://www.uniphore.com/zero-data-ai/): Uniphore's privacy-centric approach enabling organizations to leverage AI capabilities without moving or transforming underlying data, maintaining full data sovereignty and
+regulatory compliance.
+
+- [What is a Large Action Model (LAM)?](https://www.uniphore.com/resources/white-papers/differentiating-large-action-models-large-language-models/): An AI model that goes beyond text generation to execute sequences of real-world business actions — browsing, clicking, form-filling, API calls — enabling true end-to-end process automation.
+
+- [What is Automated Quality Management (AQM)?](https://www.uniphore.com/glossary/automated-quality-management-aqm/): Using AI and machine learning to streamline and standardize quality monitoring and evaluations across all customer interactions, boosting accuracy, consistency, and efficiency.
+
+- [What is Voice of the Customer (VoC)?](https://www.uniphore.com/glossary/voice-of-the-customer/): The collection and analysis of customer feedback, expectations, and experiences to inform improvements in products, services, and customer interactions.
+
+- [What is Multimodal Data?](https://www.uniphore.com/glossary/multimodal-data/): Information collected from different input types — audio, video, text — that together provide richer AI insights for enterprise applications. 
+
+- [What is a Large Language Model (LLM)?](https://www.uniphore.com/glossary/large-language-model/): An AI system trained on vast text datasets to understand and generate human-like language for diverse enterprise applications.
+
+- [What is AI-Ready Data?](https://www.uniphore.com/glossary/ai-ready-data/): Structured, cleansed, and properly formatted information optimized for training and deploying artificial intelligence models at enterprise scale.
+
+- [What is Compliance Recording?](https://www.uniphore.com/glossary/compliance-recording/): Capturing and securely storing customer interactions to meet regulatory requirements and ensure data integrity across industries like financial services and healthcare.
+
+## Recent Thought Leadership
+
+- [Meet the Uniphore Business AI Cloud](https://www.uniphore.com/blog/meet-the-uniphore-business-ai-cloud/): Introducing the Business AI Cloud — Uniphore's answer to fragmented, bolt-on AI tools — with a unified, sovereign, composable platform designed for enterprise-scale deployment.
+
+- [Meet the First Ever Zero Data AI](https://www.uniphore.com/blog/meet-the-first-ever-zero-data-ai/): Introducing Zero Data AI — Uniphore's breakthrough approach to unlocking AI value without data migration, transformation, or privacy risk.
+
+- [A Look Inside Uniphore's AI Research and Innovation Strategy](https://www.uniphore.com/blog/a-look-inside-uniphores-ai-research-and-innovation-strategy/): An inside look at Uniphore's engineering and research approach, featuring the team behind the models, fine-tuning methodology, and innovation roadmap.
+
+- [5 Ways AI Will Redefine Marketing in 2026](https://www.uniphore.com/blog/5-ways-ai-will-redefine-marketing-in-2026/): How Business AI is transforming enterprise marketing beyond fragmented, bolt-on automation — covering personalization, real-time activation, and agentic marketing workflows.
+
+- [Why the Composable CDP is a Must-Have for Enterprise Brands](https://www.uniphore.com/blog/composable-cdp/): Enterprise organizations shifting from monolithic CDPs to composable architectures for flexibility, speed, and datadriven decisions at scale.
+
+## Competitive Content
+
+- [UNIPHORE BUSINESS AI CLOUD VS MICROSOFT AZURE AI] (https://www.uniphore.com/compare/uniphore-vs-microsoft-azure-ai/): Uniphore Business AI Cloud vs Microsoft Azure AI: a full comparison of data access, model strategy, process discovery, governance, and stack complexity for enterprise buyers.
+
+- [UNIPHORE BUSINESS AI CLOUD VS AWS BEDROCK] (https://www.uniphore.com/compare/uniphore-vs-aws-bedrock/): Uniphore Business AI Cloud vs AWS Bedrock: a full comparison of data handling, model strategy, agentic AI, process discovery, and governance for enterprise buyers.
+
+- [UNIPHORE BUSINESS AI CLOUD VS GOOGLE VERTEX AI] (https://www.uniphore.com/compare/uniphore-vs-google-vertex-ai/): Uniphore Business AI Cloud vs Google Vertex AI: a full comparison of data sovereignty, model strategy, process discovery, agentic AI, and governance for enterprise buyers leaving the GCP boundary.

@@ -1,0 +1,85 @@
+generated: '2026-08-02'
+method: searched
+source: https://uniphore.us.auth0.com/.well-known/openid-configuration
+docs: https://uniphore.github.io/baic-docs/
+note: >-
+  Uniphore publishes no OpenAPI, so no product/API scopes could be derived from
+  oauth2 securitySchemes. The scopes below are the ones actually advertised by
+  Uniphore's dedicated Auth0 identity tenant in its anonymous OIDC discovery
+  document (scopes_supported) — the standard OIDC identity scope set. Any
+  Business AI Cloud resource-server scopes are provisioned per tenant/audience
+  and are not published anonymously; do not assume additional scopes exist.
+schemes:
+- name: openIdConnect
+  source: well-known/uniphore-openid-configuration.json
+  issuer: https://uniphore.us.auth0.com/
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://uniphore.us.auth0.com/authorize
+    tokenUrl: https://uniphore.us.auth0.com/oauth/token
+  - flow: clientCredentials
+    tokenUrl: https://uniphore.us.auth0.com/oauth/token
+  - flow: deviceCode
+    deviceAuthorizationUrl: https://uniphore.us.auth0.com/oauth/device/code
+    tokenUrl: https://uniphore.us.auth0.com/oauth/token
+scopes:
+- scope: openid
+  description: Request an ID token and identify the authenticated end user (OIDC core).
+  flows: [authorizationCode, deviceCode]
+  sources: [well-known/uniphore-openid-configuration.json]
+- scope: profile
+  description: Access the end user's default profile claims.
+  flows: [authorizationCode, deviceCode]
+  sources: [well-known/uniphore-openid-configuration.json]
+- scope: offline_access
+  description: Issue a refresh token so the client can obtain new access tokens without user interaction.
+  flows: [authorizationCode, deviceCode]
+  sources: [well-known/uniphore-openid-configuration.json]
+- scope: name
+  description: Access the end user's full name claim.
+  flows: [authorizationCode]
+  sources: [well-known/uniphore-openid-configuration.json]
+- scope: given_name
+  description: Access the end user's given name claim.
+  flows: [authorizationCode]
+  sources: [well-known/uniphore-openid-configuration.json]
+- scope: family_name
+  description: Access the end user's family name claim.
+  flows: [authorizationCode]
+  sources: [well-known/uniphore-openid-configuration.json]
+- scope: nickname
+  description: Access the end user's nickname claim.
+  flows: [authorizationCode]
+  sources: [well-known/uniphore-openid-configuration.json]
+- scope: email
+  description: Access the end user's email address claim.
+  flows: [authorizationCode]
+  sources: [well-known/uniphore-openid-configuration.json]
+- scope: email_verified
+  description: Access the end user's email verification status claim.
+  flows: [authorizationCode]
+  sources: [well-known/uniphore-openid-configuration.json]
+- scope: picture
+  description: Access the end user's profile picture claim.
+  flows: [authorizationCode]
+  sources: [well-known/uniphore-openid-configuration.json]
+- scope: created_at
+  description: Access the end user's account creation timestamp claim.
+  flows: [authorizationCode]
+  sources: [well-known/uniphore-openid-configuration.json]
+- scope: identities
+  description: Access the end user's linked identity providers claim.
+  flows: [authorizationCode]
+  sources: [well-known/uniphore-openid-configuration.json]
+- scope: phone
+  description: Access the end user's phone number claim.
+  flows: [authorizationCode]
+  sources: [well-known/uniphore-openid-configuration.json]
+- scope: address
+  description: Access the end user's postal address claim.
+  flows: [authorizationCode]
+  sources: [well-known/uniphore-openid-configuration.json]
+x-evidence:
+- url: https://uniphore.us.auth0.com/.well-known/openid-configuration
+  http_status: 200
+  fetched: '2026-08-02'

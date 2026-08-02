@@ -1,0 +1,84 @@
+generated: '2026-08-02'
+method: searched
+probe: true
+source: https://trust.uniphore.com/
+url: https://trust.uniphore.com/
+platform: SafeBase (uniphore.portals.safebase.io)
+contact: uniphore_trust@uniphore.com
+certifications:
+- SOC 2 Type 2
+- ISO/IEC 27001:2022
+- ISO/IEC 27017:2015
+- ISO/IEC 27018:2019
+- ISO/IEC 27701:2019
+- PCI DSS v4.0.1
+- HIPAA
+- GDPR
+- FIPS 140-2
+- FIPS 140-3
+- CASA Tier 2
+- NIST CSF
+- EU AI Act
+documents:
+- Compliance attestations (SOC 2, ISO, HIPAA, PCI DSS, CASA Tier 2)
+- Penetration testing reports
+- Data Processing Agreement
+- Privacy Policy
+- Access Control Policy
+- Cyber Insurance certificate
+- W-9
+secondary_sources:
+- url: https://www.uniphore.com/security/
+  certifications_named:
+  - ISO/IEC 27001:2022
+  - PCI DSS (Level 1 Service Provider)
+  - SOC 2 Type II
+- url: https://www.uniphore.com/legal/dpa/
+  kind: data-processing-agreement
+vulnerability_disclosure:
+  published: false
+  note: >-
+    No published vulnerability disclosure or bug bounty program was found.
+    /.well-known/security.txt is 404 on every Uniphore host; hackerone.com/uniphore
+    and bugcrowd.com/uniphore both 404; no /responsible-disclosure or
+    /vulnerability-disclosure page exists on uniphore.com. The Trust Center does
+    publish penetration testing reports and a uniphore_trust@uniphore.com contact,
+    but neither constitutes a disclosure policy. No Security /
+    VulnerabilityDisclosure pointer is emitted for this provider.
+evidence:
+- source: DNS
+  detail: trust.uniphore.com CNAME uniphore.portals.safebase.io
+- source: https://trust.uniphore.com/
+  keywords:
+  - soc 2
+  - iso/iec 27001
+  - iso/iec 27017
+  - iso/iec 27018
+  - pci dss
+  - hipaa
+  - gdpr
+  - fips 140
+  - trust center
+  - penetration testing
+- source: https://www.uniphore.com/security/
+  keywords:
+  - iso 27001
+  - pci dss
+  - soc2 type ii
+x-evidence:
+- url: https://trust.uniphore.com/
+  http_status: 403
+  note: >-
+    Direct curl hits a Cloudflare interstitial; content confirmed on 2026-08-02 by
+    a rendering fetch and independently by 0-working/probe-security-programs.py,
+    which matched trust/compliance keywords in the body.
+  fetched: '2026-08-02'
+- url: https://www.uniphore.com/security/
+  http_status: 200
+  fetched: '2026-08-02'
+- url: https://hackerone.com/uniphore
+  http_status: 404
+  fetched: '2026-08-02'
+- url: https://bugcrowd.com/uniphore
+  http_status: 404
+  fetched: '2026-08-02'

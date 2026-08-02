@@ -1,0 +1,124 @@
+generated: '2026-08-02'
+method: searched
+source: https://registry.npmjs.org/-/v1/search?text=uniphore
+note: >-
+  Uniphore publishes no general-purpose, versioned server SDK for a public REST
+  API. What it does publish first-party are Node client libraries and chat UI
+  libraries on npm, authored by "Uniphore" and pointing at repositories in the
+  github.com/uniphore organization. These are solution-delivery libraries for
+  the Interact conversation surface and for contact-centre messaging
+  integrations (Five9, Ameyo). They are real and first-party, but most were last
+  published in 2023-2024. Registries probed with no first-party result: PyPI,
+  Maven Central, NuGet, pkg.go.dev, RubyGems, Packagist, crates.io.
+packages:
+- language: javascript
+  registry: npm
+  name: uniphore-interact-conversation-api-client
+  version: 8.1.2
+  url: https://www.npmjs.com/package/uniphore-interact-conversation-api-client
+  install: npm install uniphore-interact-conversation-api-client
+  description: Queries Uniphore's Interact Conversation API and parses the response's HTML for texts and buttons.
+  author: Uniphore
+  license: MIT
+  last_published: '2023-09-08'
+  official: true
+- language: javascript
+  registry: npm
+  name: uniphore-five9-messaging-api-client-library
+  version: 7.2.0
+  url: https://www.npmjs.com/package/uniphore-five9-messaging-api-client-library
+  install: npm install uniphore-five9-messaging-api-client-library
+  description: Client library for the Five9 messaging API integration.
+  author: Uniphore
+  repository: https://github.com/uniphore/delivery-se-uniphore-five9-messaging-api-client-library-nodejs
+  license: ISC
+  last_published: '2024-01-08'
+  official: true
+- language: javascript
+  registry: npm
+  name: uniphore-ameyo-messaging-api-client-library
+  url: https://www.npmjs.com/package/uniphore-ameyo-messaging-api-client-library
+  install: npm install uniphore-ameyo-messaging-api-client-library
+  description: Client library for the Ameyo messaging API integration.
+  author: Uniphore
+  official: true
+- language: javascript
+  registry: npm
+  name: uniphore-chat-service-library
+  version: 7.0.1
+  url: https://www.npmjs.com/package/uniphore-chat-service-library
+  install: npm install uniphore-chat-service-library
+  author: Uniphore
+  repository: https://github.com/uniphore/delivery-se-uniphore-five9-messaging-api-client-library-nodejs
+  license: ISC
+  last_published: '2024-03-08'
+  official: true
+- language: javascript
+  registry: npm
+  name: uniphore-chat-ui
+  url: https://www.npmjs.com/package/uniphore-chat-ui
+  install: npm install uniphore-chat-ui
+  description: Embeddable Vue 3 chat UI for Uniphore conversation surfaces.
+  author: Uniphore
+  kind: ui-component
+  official: true
+- language: javascript
+  registry: npm
+  name: uniphore-microsoft-chat-bot-server
+  url: https://www.npmjs.com/package/uniphore-microsoft-chat-bot-server
+  install: npm install uniphore-microsoft-chat-bot-server
+  description: >-
+    Serves a Microsoft bot which, on receipt of text and/or data from a user,
+    queries a chat conversation facilitator and displays the texts and buttons
+    of its response.
+  author: Uniphore
+  official: true
+- language: javascript
+  registry: npm
+  name: uniphore-interact-chat-conversation-facilitator
+  url: https://www.npmjs.com/package/uniphore-interact-chat-conversation-facilitator
+  install: npm install uniphore-interact-chat-conversation-facilitator
+  description: Queries Uniphore's Interact Conversation API and parses the response's HTML for texts and buttons.
+  author: Uniphore
+  official: true
+distributions:
+- name: Chronos
+  description: Enterprise Process Discovery Tool — signed desktop installers.
+  url: https://github.com/uniphore/chronos-releases/releases
+  version: v0.2.4
+  released: '2026-06-01'
+  platforms:
+  - x86_64-pc-windows-msvc (.zip, .msi, .exe enterprise + user bundle)
+  - x86_64-apple-darwin (.tar.gz)
+  - aarch64-apple-darwin (.tar.gz)
+  - x86_64-unknown-linux-gnu (.tar.gz)
+  official: true
+- name: uniphore-baic Helm chart
+  description: >-
+    Umbrella Helm chart bundling the 13 BAIC microservices, distributed as OCI
+    artifacts from Uniphore's Harbor registry. Requires a Uniphore-issued robot
+    account; not anonymously pullable.
+  registry: registry.uniphore.com
+  install: helm install baic oci://<your-registry>/baic-charts/uniphore-baic --version 0.1.2
+  docs: https://uniphore.github.io/baic-docs/
+  official: true
+  public: false
+registries_probed:
+  npm: found
+  pypi: none
+  maven_central: none
+  nuget: none
+  go_modules: none
+  rubygems: none
+  packagist: none
+  crates_io: none
+x-evidence:
+- url: https://registry.npmjs.org/-/v1/search?text=uniphore
+  http_status: 200
+  fetched: '2026-08-02'
+- url: https://pypi.org/pypi/uniphore/json
+  http_status: 404
+  fetched: '2026-08-02'
+- url: https://api.github.com/repos/uniphore/chronos-releases/releases
+  http_status: 200
+  fetched: '2026-08-02'

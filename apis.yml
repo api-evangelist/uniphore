@@ -1,18 +1,86 @@
 aid: uniphore
 name: Uniphore
-description: 'Uniphore is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Uniphore is an enterprise AI company — "The Business AI Company" — founded
+  in 2008 and headquartered in Palo Alto, California. Its flagship platform, the Business
+  AI Cloud (BAIC), is a sovereign, composable and secure AI platform organised into
+  four layers: a Data Layer for zero-copy access to enterprise data, a Knowledge Layer
+  for retrieval and grounding, a Model Layer for serving and fine-tuning small and
+  large language models without vendor lock-in, and an Agentic Layer for no-code,
+  BPMN-based agent orchestration. Products span Marketing AI (CDP Agent), Sales AI,
+  People AI and Customer Service AI (real-time guidance, self-service, conversation
+  insights and communication recording agents). The platform ships as a managed
+  multi-region cloud service and as a customer-deployed Kubernetes/Helm distribution
+  of 13 microservices with a documented machine-to-machine token exchange, a /v1
+  question-answering API and an OpenAI-compatible LLM inference proxy. Uniphore
+  serves 2,000+ enterprises, raised a $260M Series F from NVIDIA, AMD, Snowflake and
+  Databricks, and has acquired Orby AI, Autonom8, ActionIQ, Infosum and Jacada.'
 url: https://raw.githubusercontent.com/api-evangelist/uniphore/refs/heads/main/apis.yml
+image: https://www.uniphore.com/wp-content/uploads/2025/12/cropped-Uniphore–Bug–Gradient–Light-192x192.webp
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-02'
 modified: '2026-08-02'
 tags:
 - Company
-apis: []
+- Artificial Intelligence
+- Agents
+- Conversational AI
+- Customer Data Platform
+- Contact Center
+- Machine Learning
+- Large Language Models
+- Enterprise Software
+- Automation
+- Customer Experience
+- Knowledge Management
+apis:
+- name: Uniphore Business AI Cloud (BAIC) Platform API
+  description: 'The Business AI Cloud platform API. The publicly documented surface
+    is the customer-deployed BAIC distribution: a machine-to-machine token exchange
+    at POST /auth/m2m-token, a retrieval-augmented question-answering endpoint at
+    POST /v1/question-answer/ask, an OpenAI-compatible LLM inference proxy at
+    /openai/v1, and a small-language-model fine-tuning studio at /v1, fronted by
+    forge-api-gateway. Uniphore publishes no OpenAPI definition and no public API
+    reference; api.uniphore.com is a live Kong gateway whose routes are tenant- and
+    product-scoped. For self-hosted deployments the base URL is customer-determined.'
+  humanURL: https://uniphore.github.io/baic-docs/
+  baseURL: https://api.uniphore.com
+  tags:
+  - Artificial Intelligence
+  - Agents
+  - Large Language Models
+  - Knowledge Management
+  properties:
+  - type: Documentation
+    url: https://uniphore.github.io/baic-docs/
+  - type: Authentication
+    url: authentication/uniphore-authentication.yml
+  - type: Conventions
+    url: conventions/uniphore-conventions.yml
+  - type: SourceCode
+    url: https://github.com/uniphore/baic-docs
+- name: Uniphore Identity (OpenID Connect)
+  description: 'Uniphore''s dedicated Auth0 identity tenant, which fronts sign-in for
+    the Uniphore customer portal and issues the OAuth 2.0 / OIDC tokens used against
+    Uniphore services. It publishes anonymous OIDC discovery and RFC 8414
+    authorization-server metadata, supports authorization code with PKCE (S256),
+    client credentials, refresh token, device code, token exchange and JWT bearer
+    grants, plus DPoP, CIBA and back-channel logout.'
+  humanURL: https://uniphore.us.auth0.com/.well-known/openid-configuration
+  baseURL: https://uniphore.us.auth0.com
+  tags:
+  - Authentication
+  - Authorization
+  - Identity
+  - OpenID Connect
+  properties:
+  - type: OpenIDConnect
+    url: well-known/uniphore-openid-configuration.json
+  - type: Authentication
+    url: authentication/uniphore-authentication.yml
+  - type: OAuthScopes
+    url: scopes/uniphore-scopes.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -20,4 +88,67 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://forgeglobal.com/uniphore_stock/
+  url: https://www.uniphore.com/
+- type: DeveloperPortal
+  url: https://uniphore.github.io/baic-docs/
+- type: Documentation
+  url: https://uniphore.github.io/baic-docs/
+- type: GettingStarted
+  url: https://uniphore.github.io/baic-docs/#prerequisites
+- type: Support
+  url: https://www.uniphore.com/support/
+- type: HelpCenter
+  url: https://support.uniphore.com/en-US/uniphore-support
+- type: Blog
+  url: https://www.uniphore.com/blog/
+- type: GitHubOrganization
+  url: https://github.com/uniphore
+- type: SignUp
+  url: https://help.uniphore.com/
+- type: TermsOfService
+  url: https://www.uniphore.com/legal/msa/
+- type: PrivacyPolicy
+  url: https://www.uniphore.com/legal/privacy-policy/
+- type: AcceptableUsePolicy
+  url: https://www.uniphore.com/legal/aup/
+- type: DataProcessingAgreement
+  url: https://www.uniphore.com/legal/dpa/
+- type: ServiceLevelAgreement
+  url: https://www.uniphore.com/legal/sla/
+- type: TrustCenter
+  url: security/uniphore-trust-center.yml
+- type: Compliance
+  url: https://trust.uniphore.com/
+- type: Conformance
+  url: conformance/uniphore-conformance.yml
+- type: Authentication
+  url: authentication/uniphore-authentication.yml
+- type: OAuthScopes
+  url: scopes/uniphore-scopes.yml
+- type: WellKnown
+  url: well-known/uniphore-well-known.yml
+- type: LLMsTxt
+  url: llms/uniphore-llms.txt
+- type: Packages
+  url: packages/uniphore-packages.yml
+- type: SDKs
+  url: packages/uniphore-packages.yml
+- type: Lifecycle
+  url: lifecycle/uniphore-lifecycle.yml
+- type: Deprecation
+  url: https://www.uniphore.com/legal/sla/
+- type: ChangeLog
+  url: changelog/uniphore-changelog.yml
+- type: Conventions
+  url: conventions/uniphore-conventions.yml
+- type: DomainSecurity
+  url: security/uniphore-domain-security.yml
+- type: Partners
+  url: https://www.uniphore.com/partners/
+- type: Contact
+  url: https://www.uniphore.com/contact/
+x-enrichment:
+  date: '2026-08-02'
+  status: enriched
+  artifacts_added: 14
+  pass: local-v1

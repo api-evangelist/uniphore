@@ -1,0 +1,82 @@
+generated: '2026-08-02'
+method: searched
+source: https://uniphore.github.io/baic-docs/
+note: >-
+  Uniphore publishes no OpenAPI and no public API reference, so the conventions
+  below are read only from what is genuinely documented in public: the BAIC
+  Installation Guide, the Auth0 OIDC discovery document, and the SLA. Fields
+  marked "undocumented" are honestly unknown — they are not asserted as absent
+  from the product, only absent from Uniphore's public surface.
+authentication:
+  style: bearer-jwt
+  token_acquisition:
+  - machine-to-machine — POST /auth/m2m-token with client_id + client_secret,
+    returns access_token
+  - OIDC authorization code + PKCE via uniphore.us.auth0.com
+  header: 'Authorization: Bearer <access_token>'
+  sso: OIDC SSO configurable per BAIC deployment
+  detail: authentication/uniphore-authentication.yml
+  scopes: scopes/uniphore-scopes.yml
+base_paths:
+  platform_api: /v1
+  llm_inference_proxy: /openai/v1
+  fine_tuning_studio: /v1
+  auth: /auth
+  health: /health/liveness (python/node services), /actuator/health/liveness (JVM services)
+content_type: application/json
+idempotency:
+  supported: undocumented
+  header: null
+  note: >-
+    No idempotency key, retry-safety guidance, or replay contract is documented
+    on any public Uniphore surface. No Idempotency pointer is emitted for this
+    provider.
+pagination:
+  style: undocumented
+  note: No pagination contract is published.
+versioning:
+  style: uri-path
+  current: v1
+  support_window: 6 months from official release date (per the SLA)
+  detail: lifecycle/uniphore-lifecycle.yml
+request_tracing:
+  request_id_header: undocumented
+  observability: >-
+    BAIC deployments ship Datadog browser agent and Sentry origins in the
+    forge-ui Content-Security-Policy allow-list; no customer-facing request-id
+    convention is published.
+error_envelope:
+  format: undocumented
+  note: >-
+    No public error reference. The guide references an "API error 401" surfaced
+    by the UI when the JWT issuer does not match forge-user-management, which
+    confirms standard HTTP status semantics but not an envelope shape.
+rate_limiting:
+  signalled: undocumented
+  note: No rate-limit headers or quota documentation published.
+cors:
+  configurable: true
+  mechanism: forge-user-management.app.allowedOrigins (per deployment)
+  csp: >-
+    forge-ui nginx serves a Content-Security-Policy whose origin allow-list is
+    extended per deployment via forge-ui.csp.extraOrigins.
+deployment_model:
+  modes:
+  - Uniphore Cloud (multi-region — US, EU/DE, UK, India, Australia, Singapore)
+  - Customer Private Cloud / On-Premises (Kubernetes 1.27+, Helm 3.14+)
+  self_hosted_base_url: customer-determined; the guide's api.baic.example.com is a placeholder
+  services: 13 microservices, 4 typically exposed publicly (forge-ui, forge-backend,
+    forge-user-management, forge-api-gateway)
+cross_links:
+  authentication: authentication/uniphore-authentication.yml
+  scopes: scopes/uniphore-scopes.yml
+  lifecycle: lifecycle/uniphore-lifecycle.yml
+  conformance: conformance/uniphore-conformance.yml
+  well_known: well-known/uniphore-well-known.yml
+x-evidence:
+- url: https://uniphore.github.io/baic-docs/
+  http_status: 200
+  fetched: '2026-08-02'
+- url: https://raw.githubusercontent.com/uniphore/baic-docs/main/index.md
+  http_status: 200
+  fetched: '2026-08-02'

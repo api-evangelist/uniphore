@@ -1,0 +1,84 @@
+generated: '2026-08-02'
+method: searched
+source: https://www.uniphore.com/legal/sla/
+versioning:
+  scheme: uri-path
+  current: v1
+  evidence: >-
+    The public BAIC Installation Guide documents the platform API under a /v1
+    path prefix (POST /v1/question-answer/ask); the LLM inference proxy is
+    OpenAI-compatible under /openai/v1 and the fine-tuning studio under /v1.
+  docs: https://uniphore.github.io/baic-docs/
+deprecation:
+  policy_url: https://www.uniphore.com/legal/sla/
+  policy: >-
+    "Uniphore agrees to support any given version of the Licensed Product for
+    six (6) months from its official release date." (Uniphore Service Level
+    Agreement, version 20260525.)
+  support_window: 6 months from official release date
+  sunset_header: unknown
+  deprecation_header: unknown
+sla:
+  url: https://www.uniphore.com/legal/sla/
+  version: '20260525'
+  uptime_target: 99.5%
+  measurement: monthly availability for cloud-hosted Services
+  service_credits: >-
+    Standard Support does not include service-credit remedies; credits are a
+    Premium Support tier option.
+  advance_maintenance_notice: 72 hours
+  support_response_targets:
+  - severity: 1
+    label: Critical
+    response: 1 hour
+    updates: every 4 hours, 24/7
+  - severity: 2
+    label: High
+    response: 4 hours
+    updates: daily
+  - severity: 3
+    label: Medium
+    response: 24 business hours
+    updates: every 2 business days
+  - severity: 4
+    label: Low
+    response: 3 business days
+  maintenance_windows:
+  - region: India
+    window: Monday 23:30 - Tuesday 01:30 IST
+  - region: Australia
+    window: Tuesday 01:30 - 03:30 AEST
+  - region: United States
+    window: Monday/Wednesday 22:15 - Tuesday/Thursday 00:30 PT
+  - region: EU / Germany
+    window: Wednesday 00:30 - 03:00 GMT
+  - region: United Kingdom
+    window: Wednesday 03:00 - 06:00 GMT
+  - region: Singapore
+    window: Tuesday 23:00 - Wednesday 01:00 SGT
+  - region: On-premises
+    window: Wednesday 21:00 - 01:00 and Sunday 09:00 - 13:00
+status_page: none
+status_page_note: >-
+  No status page found. status.uniphore.com does not resolve; the
+  uniphore.statuspage.io tenant redirects to /inactive. Incidents are handled
+  through the customer support portal (support.uniphore.com) under the SLA
+  severity model above.
+release_channels:
+- name: Chronos (Enterprise Process Discovery Tool)
+  url: https://github.com/uniphore/chronos-releases/releases
+  cadence: roughly monthly
+  latest: v0.2.4
+  latest_date: '2026-06-01'
+deprecated_operations: []
+x-evidence:
+- url: https://www.uniphore.com/legal/sla/
+  http_status: 200
+  fetched: '2026-08-02'
+- url: https://uniphore.statuspage.io/
+  http_status: 200
+  final_url: https://uniphore.statuspage.io/inactive
+  fetched: '2026-08-02'
+- url: https://github.com/uniphore/chronos-releases/releases
+  http_status: 200
+  fetched: '2026-08-02'
