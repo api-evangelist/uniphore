@@ -1,0 +1,14 @@
+{
+  "repo": "uniphore",
+  "feeds": [
+    {
+      "source": "https://support.uniphore.com/en-US/uniphore-support",
+      "feed_url": "https://support.uniphore.com/en-US/uniphore-support",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    }
+  ],
+  "post_count": 0,
+  "fetched": "2026-08-06T14:08:46Z"
+}
