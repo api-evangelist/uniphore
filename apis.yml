@@ -13,14 +13,17 @@ description: 'Uniphore is an enterprise AI company — "The Business AI Company"
   of 13 microservices with a documented machine-to-machine token exchange, a /v1
   question-answering API and an OpenAI-compatible LLM inference proxy. Uniphore
   serves 2,000+ enterprises, raised a $260M Series F from NVIDIA, AMD, Snowflake and
-  Databricks, and has acquired Orby AI, Autonom8, ActionIQ, Infosum and Jacada.'
+  Databricks, and has acquired Orby AI, Autonom8, ActionIQ, Infosum and Jacada. Its one
+  anonymous API reference sits apart from uniphore.com, on the U-Capture documentation
+  portal at support-rb.uniphore.com, which documents fifteen REST API families plus a
+  webhook/SNMP health-alert surface without publishing a machine-readable contract.'
 url: https://raw.githubusercontent.com/api-evangelist/uniphore/refs/heads/main/apis.yml
 image: https://www.uniphore.com/wp-content/uploads/2025/12/cropped-Uniphore–Bug–Gradient–Light-192x192.webp
 x-type: company
 x-source: harvest:secondary-market
 specificationVersion: '0.20'
 created: '2026-08-02'
-modified: '2026-08-02'
+modified: '2026-08-14'
 tags:
 - Company
 - Artificial Intelligence
@@ -81,6 +84,41 @@ apis:
     url: authentication/uniphore-authentication.yml
   - type: OAuthScopes
     url: scopes/uniphore-scopes.yml
+- name: Uniphore U-Capture REST APIs
+  description: 'The U-Capture compliance conversation-recording platform (Red Box heritage)
+    publishes an anonymous, unauthenticated API reference on Uniphore''s own documentation
+    portal at support-rb.uniphore.com — fifteen REST API families covering media retrieval and
+    live audio, metadata/annotation/transcription/lock, call suppression, record on demand,
+    export and transcription endpoints, audit, diagnostics, health-monitoring alerts, usage
+    metrics, identity and roles, LDAP mapping, licensing, policy and services configuration.
+    Every API sits behind an API Gateway that handles authentication, throttling, routing and
+    versioning. The reference is feature-and-function level: each API publishes an "API Summary"
+    naming every HTTP request, but paths, verbs, parameters, schemas, status codes and examples
+    are described as being "provided within the APIs" — that is, in the running deployment — so
+    no machine-readable contract is published. U-Capture is customer-deployed and Uniphore
+    publishes no base URL; the entitled API set differs across the Enterprise, Connect and
+    Capture editions.'
+  humanURL: https://support-rb.uniphore.com/conversa/DevelopConversa/DevelopUCaptureV2.0/DevelopUCapture/DevelopUCapture.htm
+  tags:
+  - Conversation Recording
+  - Compliance
+  - Contact Center
+  - Speech Analytics
+  properties:
+  - type: Documentation
+    url: https://support-rb.uniphore.com/conversa/
+  - type: APIReference
+    url: https://support-rb.uniphore.com/conversa/DevelopConversa/DevelopUCaptureV2.0/DevelopUCapture/DevelopUCapture.htm
+  - type: Webhooks
+    url: asyncapi/uniphore-ucapture-webhooks.yml
+  - type: DataModel
+    url: data-model/uniphore-ucapture-data-model.yml
+  - type: Authentication
+    url: authentication/uniphore-authentication.yml
+  - type: Conventions
+    url: conventions/uniphore-conventions.yml
+  - type: RateLimits
+    url: rate-limits/uniphore-rate-limits.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -143,12 +181,24 @@ common:
   url: conventions/uniphore-conventions.yml
 - type: DomainSecurity
   url: security/uniphore-domain-security.yml
+- type: APIReference
+  url: https://support-rb.uniphore.com/conversa/DevelopConversa/DevelopUCaptureV2.0/DevelopUCapture/DevelopUCapture.htm
+- type: Webhooks
+  url: asyncapi/uniphore-ucapture-webhooks.yml
+- type: DataModel
+  url: data-model/uniphore-ucapture-data-model.yml
+- type: Plans
+  url: plans/uniphore-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/uniphore-rate-limits.yml
+- type: Components
+  url: components/uniphore-components.yml
 - type: Partners
   url: https://www.uniphore.com/partners/
 - type: Contact
   url: https://www.uniphore.com/contact/
 x-enrichment:
-  date: '2026-08-02'
+  date: '2026-08-14'
   status: enriched
-  artifacts_added: 14
+  artifacts_added: 6
   pass: local-v1
