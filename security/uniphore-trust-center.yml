@@ -82,3 +82,11 @@ x-evidence:
 - url: https://bugcrowd.com/uniphore
   http_status: 404
   fetched: '2026-08-02'
+- url: https://trust.uniphore.com/
+  http_status: 200
+  note: >-
+    Re-verified 2026-08-14 by 0-working/probe-security-programs.py, which again
+    matched SOC 2, ISO 27001/27017/27018, PCI DSS, HIPAA, GDPR and FIPS 140 in the
+    body. The probe's own output is a keyword-level subset of the certification
+    list captured on 2026-08-02; the richer searched version above is retained.
+  fetched: '2026-08-14'

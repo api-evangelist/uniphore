@@ -1,6 +1,6 @@
-generated: '2026-08-02'
+generated: '2026-08-14'
 method: searched
-source: https://uniphore.github.io/baic-docs/
+source: https://uniphore.github.io/baic-docs/ + https://support-rb.uniphore.com/conversa/DevelopConversa/DevelopUCaptureV2.0/DevelopUCapture/DevelopUCapture.htm
 note: >-
   Uniphore publishes no OpenAPI and no public API reference, so the conventions
   below are read only from what is genuinely documented in public: the BAIC
@@ -67,13 +67,127 @@ deployment_model:
   self_hosted_base_url: customer-determined; the guide's api.baic.example.com is a placeholder
   services: 13 microservices, 4 typically exposed publicly (forge-ui, forge-backend,
     forge-user-management, forge-api-gateway)
+surfaces:
+  note: >-
+    Added 2026-08-14. Uniphore DOES publish an anonymous, unauthenticated API reference — it is
+    just not on uniphore.com and not linked from it. The U-Capture (ex-Red Box) documentation
+    portal at support-rb.uniphore.com publishes a feature-and-function reference for fifteen REST
+    API families, together with a per-API "API Summary" table listing every HTTP request by name.
+    What it does NOT publish is the wire contract: no paths, no verbs against paths, no
+    parameters, no request/response schemas, no status codes and no examples. The docs say
+    outright that "details of the individual HTTP requests for each API are provided within the
+    APIs" — i.e. in the Swagger surface of the running deployment, which is not public. That is
+    the precise gap between this provider and a machine-readable one.
+  ucapture:
+    product: U-Capture (compliance conversation recording; Red Box heritage)
+    docs: https://support-rb.uniphore.com/conversa/DevelopConversa/DevelopUCaptureV2.0/DevelopUCapture/DevelopUCapture.htm
+    deployment: customer-deployed; no public base URL is published
+    gateway: >-
+      All API microservices sit behind an API Gateway reverse proxy that handles SSL termination,
+      whitelisting, authentication/authorisation, throttling, request aggregation, routing, load
+      balancing, caching, logging, monitoring, metering and API versioning.
+    entitlement: >-
+      U-Capture Enterprise exposes all APIs; U-Capture Connect and U-Capture Capture do not
+      include all APIs by default — the entitled set is defined in the customer's Solution Design
+      Document or Product Specification.
+    api_families:
+    - name: Media API
+      area: data processing
+      requests: [Get Media, Get Media Details, Get Screen Recording, Export Media, Health Check]
+    - name: Metadata API
+      area: data processing
+      functional_areas: [Metadata, Annotation, Transcription, Export, Lock, Call]
+      requests: [Search Metadata, Search Metadata - Live Calls, Suggest Search Values, Get Metadata,
+        Get Metadata - Call Segments, Get Metadata - Live Call, Get Metadata - Agent Live Call,
+        Get Annotations, Add New Annotation, Update Annotation, Delete Annotation,
+        Get Transcriptions, Get Transcription - Specific Language, Search Transcriptions,
+        Export Metadata, Get Locks, Add Lock]
+      requests_note: Lock/Call sections continue beyond the harvested excerpt; list is partial.
+    - name: Call Suppression API
+      area: data processing
+      requests: [Call Suppression (start/stop suppression of media capture on a live call)]
+      use_case: PCI suppression, privacy mode
+    - name: Record on Demand API
+      area: data processing
+      requests: [Record on Demand (set RoD state for a live call)]
+      use_case: selective call retention, audio crop
+    - name: Export APIs
+      area: export & transcription
+      capability: define export data endpoints (documented examples Microsoft Azure, Salesforce,
+        Bloomberg) and transcription services for realtime and post-call transcription
+    - name: Audit API
+      area: health monitoring
+      requests: [Get Action Categories, Search Audit Logs, Export Audit Events]
+      formats: [JSON, CSV]
+    - name: Diagnostic Capture API
+      area: health monitoring
+      requests: [Start New Capture Job, Delete Capture Job, Get Metadata for a Specific Job,
+        Get Metadata for all Jobs, Get Job Status, Download Diagnostic File]
+    - name: Health Monitoring APIs
+      area: health monitoring
+      requests: [Create New Alert Configuration, Update Alert Configuration, Delete Alert
+          Configuration, Get Alert Configuration Details, Create & Send an Alert, Search Alerts,
+        Get Storage Details]
+      event_surface: asyncapi/uniphore-ucapture-webhooks.yml
+    - name: Usage Metrics API
+      area: health monitoring
+      requests: [Get All Usage Metrics Configurations, Get Specified Usage Metrics Configuration,
+        Create Usage Metrics Configuration, Update Usage Metrics Configuration, Delete Usage
+          Metrics Configuration]
+      report_types: [CapturedCalls, ConsumedApis, All]
+      frequencies: [Daily, Weekly, Monthly, Yearly]
+    - name: Identity Server API
+      area: system management
+      capability: Roles, Users, Claim Maps, external Identity Provider definitions
+      sso_protocols: [OpenID Connect, OAuth, WS-Federation, SAML]
+    - name: Identity Server Read API
+      area: system management
+      capability: read-only Tenant details (Tenant configuration is restricted to Uniphore
+        engineers)
+    - name: LDAP Configuration API
+      area: system management
+      capability: LDAP server configuration plus internal/external field mapping with an optional
+        TransformationRegex and a Common Object Model inclusion flag
+    - name: Licence API
+      area: system management
+      requests: [Apply a Licence, Update a Licence, Get Details for all Licences, Get Details for a
+          Specific Licence, Remove (Delete) a Licence, Get Usage Statistics for all Licences,
+        Get Usage Statistics for a Specific Feature, Verify Licences]
+    - name: Policy Configuration API
+      area: system management
+      requests: [Create a Policy, Get all Policy Configurations, Get a Specific Policy
+          Configuration, Search Policies, Enable/Disable a Policy, Delete a Policy, Batch Requests,
+        Set Policy Check Period]
+    - name: Services Configuration APIs
+      area: system management
+      capability: service-level configuration including Common Object Model mapping and external
+        storage locations
+    data_model: data-model/uniphore-ucapture-data-model.yml
+    error_envelope: undocumented
+    pagination: undocumented
+    idempotency: undocumented
+    rate_limits: rate-limits/uniphore-rate-limits.yml
+
 cross_links:
   authentication: authentication/uniphore-authentication.yml
+  data_model: data-model/uniphore-ucapture-data-model.yml
+  webhooks: asyncapi/uniphore-ucapture-webhooks.yml
+  rate_limits: rate-limits/uniphore-rate-limits.yml
+  plans: plans/uniphore-plans-pricing.yml
   scopes: scopes/uniphore-scopes.yml
   lifecycle: lifecycle/uniphore-lifecycle.yml
   conformance: conformance/uniphore-conformance.yml
   well_known: well-known/uniphore-well-known.yml
 x-evidence:
+- url: https://support-rb.uniphore.com/conversa/DevelopConversa/DevelopUCaptureV2.0/DevelopUCapture/DevelopUCapture.htm
+  http_status: 200
+  fetched: '2026-08-14'
+- url: https://support-rb.uniphore.com/conversa/DevelopConversa/DevelopUCaptureV2.0/UCaptureRESTAPIs/API_Summary.htm
+  http_status: 200
+  fetched: '2026-08-14'
+- url: https://support-rb.uniphore.com/conversa/DevelopConversa/DevelopUCaptureV2.0/UCaptureRESTAPIs/API_Gateway.htm
+  http_status: 200
+  fetched: '2026-08-14'
 - url: https://uniphore.github.io/baic-docs/
   http_status: 200
   fetched: '2026-08-02'

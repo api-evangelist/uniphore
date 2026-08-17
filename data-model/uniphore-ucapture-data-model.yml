@@ -1,0 +1,196 @@
+generated: '2026-08-14'
+method: searched
+source: https://support-rb.uniphore.com/conversa/DevelopConversa/DevelopUCaptureV2.0/UCaptureMetadataAPI/Common_Object_Model.htm
+name: Uniphore U-Capture data model
+note: >-
+  Derived from Uniphore's own public U-Capture documentation, not from an OpenAPI — Uniphore
+  publishes no machine-readable spec, so field-level types, required flags and id formats are
+  unavailable. Entities and relationships below are only those the documentation states
+  explicitly. The docs themselves say the practical way to discover available metadata is to
+  search and retrieve a recording and inspect what comes back, which is an accurate description
+  of a data model that is not published.
+canonical_model:
+  name: U-Capture Common Object Model (COM)
+  purpose: >-
+    A universal metadata format used for every recording regardless of the source telephony or
+    communications system.
+  groups:
+  - name: Agent Data
+    description: Properties related to the recorded agent.
+  - name: Device Data
+    description: Properties related to the recorded device.
+  - name: Call Data
+    description: Properties related to the recording (e.g. CallStartDateTime).
+  - name: System Data
+    description: Properties related to U-Capture system capabilities.
+  - name: Annotations
+    description: Customised metadata fields added by customers.
+  variability: >-
+    Some fields are always present (CallStartDateTime is the documented example); others depend
+    on the telephony system, agent-data availability, media type, device type and system
+    capabilities.
+  mapping:
+    com_mapping: Services Configuration API
+    collector_mapping: per-integration Collector configuration
+    ldap_mapping: >-
+      LDAP Configuration API pairs an InternalField to an ExternalField (e.g. an AD attribute),
+      with IsCommonObjectMapping deciding whether it joins the COM and appears in call metadata,
+      and an optional TransformationRegex applied to the value.
+entities:
+- name: Call
+  aka: [Recording, Conversation]
+  identifier: Call ID
+  description: The unit of capture. May be live (in progress) or stored.
+  states: [live, stored]
+  api: Metadata API, Media API
+- name: CallSegment
+  identifier: U-Capture Segment ID
+  description: Segmented or linked calls that belong to the same conversation share one Segment ID.
+  api: Metadata API
+- name: Media
+  description: Captured audio, video, screen recording and messages for a Call; retrievable in a
+    selectable target format, including in-progress audio.
+  api: Media API
+- name: Metadata
+  description: COM metadata for a Call, searchable and retrievable for both live and stored calls.
+  api: Metadata API
+- name: Annotation
+  description: Customised metadata entry attached to a Call, optionally with a second-offset
+    pointing at a moment in the conversation.
+  requires: an annotation header (type) created via the Configuration API
+  api: Metadata API
+- name: Transcription
+  description: Voice-to-text transcript of a Call; multiple per Call when multiple languages are
+    supported. Optional service requiring additional components.
+  api: Metadata API, Export APIs
+- name: Lock
+  description: Prevents deletion of a Call. Multiple locks and multiple locking users are
+    supported (the documented "Legal Hold" pattern).
+  api: Metadata API
+- name: Policy
+  description: Configuration that applies an action to matching recordings when its trigger fires;
+    scheduled (storage) policies run on a global policy check period.
+  api: Policy Configuration API
+- name: DataEndpoint
+  description: Export destination for media, metadata and transcriptions (documented examples —
+    Microsoft Azure, Salesforce, Bloomberg).
+  api: Export APIs
+- name: AlertConfiguration
+  description: A webhook or SNMP endpoint registered to receive health monitoring alerts, with
+    optional per-configuration alert-type filtering.
+  api: Health Monitoring API
+- name: Alert
+  description: An information / warning / critical health event emitted by Collectors and Core
+    Services; searchable after the fact.
+  api: Health Monitoring Read API
+- name: DiagnosticCaptureJob
+  description: A requested capture of diagnostic data over a date range, with status and a
+    downloadable encrypted file.
+  api: Diagnostic Capture API
+- name: AuditEntry
+  description: Categorised audit log record; categories include Capture API and Subscriptions,
+    Authorization, Policy Engine, Realtime Notifications, Realtime Streaming, Search and Playback,
+    Tenant Management, Transcriptions, Usage Metrics and others.
+  api: Audit API
+- name: UsageMetricsConfiguration
+  description: Schedule and scope of usage reporting (reportType CapturedCalls | ConsumedApis |
+    All; frequency Daily | Weekly | Monthly | Yearly; first-send UTC offset).
+  api: Usage Metrics API
+- name: Licence
+  description: Feature entitlement applied to a Tenant, with usage statistics and verification per
+    licence type.
+  api: Licence API
+- name: Tenant
+  description: The U-Capture tenancy. Read-only over the API; direct configuration is restricted
+    to Uniphore engineers.
+  api: Identity Server Read API
+- name: Role
+  description: Access privileges / permissions grouping for account management.
+  api: Identity Server API
+- name: User
+  description: An account within a Tenant.
+  api: Identity Server API
+- name: ClaimMap
+  description: Mapping of external identity claims onto U-Capture roles/permissions.
+  api: Identity Server API
+- name: IdentityProvider
+  description: External IdP definition for login and SSO; documented protocols are OpenID Connect,
+    OAuth, WS-Federation and SAML.
+  api: Identity Server API
+relationships:
+- from: Call
+  to: Media
+  type: has_many
+  via: Call ID
+- from: Call
+  to: Metadata
+  type: has_one
+  via: Call ID
+- from: Call
+  to: Annotation
+  type: has_many
+  via: Call ID
+- from: Call
+  to: Transcription
+  type: has_many
+  via: Call ID + language
+- from: Call
+  to: Lock
+  type: has_many
+  via: Call ID
+- from: Call
+  to: CallSegment
+  type: has_many
+  via: U-Capture Segment ID
+- from: Annotation
+  to: AnnotationHeader
+  type: belongs_to
+  via: annotation type configured through the Configuration API
+- from: Policy
+  to: DataEndpoint
+  type: has_one
+  via: export policy target
+- from: AlertConfiguration
+  to: Alert
+  type: has_many
+  via: delivery endpoint
+- from: Tenant
+  to: Licence
+  type: has_many
+  via: Tenant
+- from: Tenant
+  to: User
+  type: has_many
+  via: Tenant
+- from: User
+  to: Role
+  type: has_many
+  via: account management
+- from: IdentityProvider
+  to: ClaimMap
+  type: has_many
+  via: claim mapping
+stores:
+  named_in_docs: [Media Store, Metadata Store, Event Store, Audit Store]
+  note: >-
+    Named in the Health Monitoring "Get Storage Details" request, whose capacity figures are
+    parsed from the most recent File System Size Alert (statusCode 1002) rather than read live.
+    External storage locations configured via the Services Configuration API are excluded from
+    those capacity figures.
+gaps:
+  field_reference: >-
+    A "Metadata Reference" topic exists in the docs set and is described as a reference list of
+    all U-Capture metadata fields; field names and types are not reproduced here because they
+    were not harvested field-by-field in this pass.
+  identifiers: No id prefix scheme, format or example value is published for Call ID or Segment ID.
+  schemas: No JSON Schema, OpenAPI components or payload example is published for any entity.
+x-evidence:
+- url: https://support-rb.uniphore.com/conversa/DevelopConversa/DevelopUCaptureV2.0/UCaptureMetadataAPI/Common_Object_Model.htm
+  http_status: 200
+  fetched: '2026-08-14'
+- url: https://support-rb.uniphore.com/conversa/DevelopConversa/DevelopUCaptureV2.0/UCaptureMetadataAPI/API_Summary.htm
+  http_status: 200
+  fetched: '2026-08-14'
+- url: https://support-rb.uniphore.com/conversa/DevelopConversa/DevelopUCaptureV2.0/UCaptureIdentityServerAPIs/API_Overview.htm
+  http_status: 200
+  fetched: '2026-08-14'

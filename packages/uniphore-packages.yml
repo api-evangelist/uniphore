@@ -1,4 +1,4 @@
-generated: '2026-08-02'
+generated: '2026-08-14'
 method: searched
 source: https://registry.npmjs.org/-/v1/search?text=uniphore
 note: >-
@@ -15,28 +15,30 @@ packages:
   registry: npm
   name: uniphore-interact-conversation-api-client
   version: 8.1.2
+  published: '2023-09-08'
   url: https://www.npmjs.com/package/uniphore-interact-conversation-api-client
   install: npm install uniphore-interact-conversation-api-client
   description: Queries Uniphore's Interact Conversation API and parses the response's HTML for texts and buttons.
   author: Uniphore
   license: MIT
-  last_published: '2023-09-08'
   official: true
 - language: javascript
   registry: npm
   name: uniphore-five9-messaging-api-client-library
   version: 7.2.0
+  published: '2024-01-08'
   url: https://www.npmjs.com/package/uniphore-five9-messaging-api-client-library
   install: npm install uniphore-five9-messaging-api-client-library
   description: Client library for the Five9 messaging API integration.
   author: Uniphore
   repository: https://github.com/uniphore/delivery-se-uniphore-five9-messaging-api-client-library-nodejs
   license: ISC
-  last_published: '2024-01-08'
   official: true
 - language: javascript
   registry: npm
   name: uniphore-ameyo-messaging-api-client-library
+  version: 1.0.9
+  published: '2023-09-20'
   url: https://www.npmjs.com/package/uniphore-ameyo-messaging-api-client-library
   install: npm install uniphore-ameyo-messaging-api-client-library
   description: Client library for the Ameyo messaging API integration.
@@ -46,16 +48,18 @@ packages:
   registry: npm
   name: uniphore-chat-service-library
   version: 7.0.1
+  published: '2024-03-08'
   url: https://www.npmjs.com/package/uniphore-chat-service-library
   install: npm install uniphore-chat-service-library
   author: Uniphore
   repository: https://github.com/uniphore/delivery-se-uniphore-five9-messaging-api-client-library-nodejs
   license: ISC
-  last_published: '2024-03-08'
   official: true
 - language: javascript
   registry: npm
   name: uniphore-chat-ui
+  version: 3.1.0
+  published: '2024-02-22'
   url: https://www.npmjs.com/package/uniphore-chat-ui
   install: npm install uniphore-chat-ui
   description: Embeddable Vue 3 chat UI for Uniphore conversation surfaces.
@@ -65,6 +69,8 @@ packages:
 - language: javascript
   registry: npm
   name: uniphore-microsoft-chat-bot-server
+  version: 4.0.6
+  published: '2024-04-16'
   url: https://www.npmjs.com/package/uniphore-microsoft-chat-bot-server
   install: npm install uniphore-microsoft-chat-bot-server
   description: >-
@@ -76,6 +82,8 @@ packages:
 - language: javascript
   registry: npm
   name: uniphore-interact-chat-conversation-facilitator
+  version: 3.0.0
+  published: '2023-06-13'
   url: https://www.npmjs.com/package/uniphore-interact-chat-conversation-facilitator
   install: npm install uniphore-interact-chat-conversation-facilitator
   description: Queries Uniphore's Interact Conversation API and parses the response's HTML for texts and buttons.
@@ -85,8 +93,10 @@ distributions:
 - name: Chronos
   description: Enterprise Process Discovery Tool — signed desktop installers.
   url: https://github.com/uniphore/chronos-releases/releases
-  version: v0.2.4
-  released: '2026-06-01'
+  version: v0.3.0
+  published: '2026-08-09'
+  released: '2026-08-09'
+  previous_version: v0.2.4
   platforms:
   - x86_64-pc-windows-msvc (.zip, .msi, .exe enterprise + user bundle)
   - x86_64-apple-darwin (.tar.gz)
@@ -99,6 +109,12 @@ distributions:
     artifacts from Uniphore's Harbor registry. Requires a Uniphore-issued robot
     account; not anonymously pullable.
   registry: registry.uniphore.com
+  version: 0.1.2
+  published: null
+  published_note: >-
+    The chart is distributed as an OCI artifact from a Harbor registry that requires a
+    Uniphore-issued robot account, so no anonymous registry metadata endpoint exists to read a
+    release date from. 0.1.2 is the version pinned in the public installation guide.
   install: helm install baic oci://<your-registry>/baic-charts/uniphore-baic --version 0.1.2
   docs: https://uniphore.github.io/baic-docs/
   official: true
@@ -112,10 +128,28 @@ registries_probed:
   rubygems: none
   packagist: none
   crates_io: none
+currency:
+  checked: '2026-08-14'
+  note: >-
+    Every npm `version` + `published` pair above was read from registry.npmjs.org package
+    metadata on 2026-08-14. Not one of the seven first-party npm packages has been republished
+    since 2024-04-16, and the newest is 2 years 4 months old — while the platform they would
+    talk to (Business AI Cloud) launched in 2026. The only actively released first-party
+    artifact is Chronos, a desktop tool, not an API client.
+  newest_npm_release: '2024-04-16'
+  newest_first_party_release: '2026-08-09'
 x-evidence:
 - url: https://registry.npmjs.org/-/v1/search?text=uniphore
   http_status: 200
   fetched: '2026-08-02'
+- url: https://registry.npmjs.org/uniphore-chat-ui
+  http_status: 200
+  note: version + published re-read for all seven npm packages
+  fetched: '2026-08-14'
+- url: https://api.github.com/repos/uniphore/chronos-releases/releases?per_page=8
+  http_status: 200
+  note: Chronos v0.3.0 published 2026-08-09
+  fetched: '2026-08-14'
 - url: https://pypi.org/pypi/uniphore/json
   http_status: 404
   fetched: '2026-08-02'

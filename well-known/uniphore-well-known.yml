@@ -1,4 +1,4 @@
-generated: '2026-08-02'
+generated: '2026-08-14'
 method: searched
 source: probed /.well-known/ on every Uniphore host discovered in apis.yml
 note: >-
@@ -22,6 +22,10 @@ hosts:
     status: 200
     content_type: application/json
     file: uniphore-jwks.json
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
 - host: https://www.uniphore.com
   documents:
   - path: /llms.txt
@@ -74,9 +78,67 @@ hosts:
     status: 404
   - path: /.well-known/agent.json
     status: 404
+- host: https://support-rb.uniphore.com
+  note: >-
+    Public U-Capture / Conversa documentation portal, found 2026-08-14. Serves no /.well-known
+    surface; unknown paths under /.well-known return an nginx HTTP 500 rather than a 404, which
+    is a misconfiguration, not a document.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 500
+  - path: /.well-known/agent.json
+    status: 500
+  - path: /.well-known/api-catalog
+    status: 500
+  - path: /.well-known/openid-configuration
+    status: 500
+  - path: /.well-known/ai-plugin.json
+    status: 500
+  - path: /llms.txt
+    status: 404
+  - path: /openapi.json
+    status: 500
+- host: https://trust.uniphore.com
+  note: SafeBase-hosted trust center behind Cloudflare; every path returns 403 to a non-browser
+    client, so nothing could be read as a document.
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+  - path: /.well-known/agent-card.json
+    status: 403
+  - path: /.well-known/agent.json
+    status: 403
+  - path: /.well-known/api-catalog
+    status: 403
+dead_hosts:
+- host: https://developer.uniphore.com
+  status: 530
+  detail: Cloudflare error 1016 — origin DNS error. The hostname resolves through Cloudflare but
+    no origin is reachable, so the developer subdomain serves nothing.
+  probed: '2026-08-14'
+- host: https://developers.uniphore.com
+  status: 403
+  detail: Cloudflare "DNS points to prohibited IP" — the record points at an address Cloudflare
+    refuses to proxy. Nothing is served.
+  probed: '2026-08-14'
+- host: https://docs.uniphoredev.com
+  status: null
+  detail: >-
+    DNS resolution fails (connection never established). This host is still cited by indexed
+    Uniphore Customer Portal documentation pages such as
+    https://docs.uniphoredev.com/en/getting-started-with-u-assist.html, so the U-Assist
+    documentation it served is now unreachable.
+  probed: '2026-08-14'
 security_txt: none
 api_catalog: none
 agent_card: none
 x-evidence:
   fetched: '2026-08-02'
+  rechecked: '2026-08-14'
+  recheck_note: >-
+    All three Auth0 discovery documents still return 200 and are unchanged; every Uniphore-owned
+    path re-probed on 2026-08-14 still 404s. Three additional hosts were probed this round
+    (support-rb.uniphore.com, trust.uniphore.com and the two dead developer subdomains).
   probe: HTTP GET, User-Agent desktop Chrome, follow redirects

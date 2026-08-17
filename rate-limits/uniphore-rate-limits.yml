@@ -1,0 +1,55 @@
+generated: '2026-08-14'
+method: searched
+source: https://support-rb.uniphore.com/conversa/DevelopConversa/DevelopUCaptureV2.0/UCaptureRESTAPIs/API_Gateway.htm
+  + https://uniphore.github.io/baic-docs/
+name: Uniphore Rate Limits
+limit_count: 0
+summary: >-
+  Uniphore documents that rate limiting EXISTS as an API gateway capability but publishes no
+  numbers, no windows, no response headers and no exhaustion status code. The U-Capture API
+  Gateway topic states that the gateway manages "performance related capabilities such as
+  throttling (or rate limiting), request aggregation, routing, load balancing, and caching
+  between backend services" — a capability statement, not a contract. On the Business AI Cloud
+  side, api.uniphore.com is a Kong gateway that answers every unrouted anonymous request with
+  {"message":"no Route matched with those values"} and returns no RateLimit-* or X-RateLimit-*
+  headers, so nothing could be observed live either. limit_count is 0 because zero numeric
+  limits are published — an honest zero, not an unchecked field.
+http_rate_limits: []
+mechanism:
+  documented: true
+  enforced_at: API gateway (Kong on api.uniphore.com; the U-Capture API Gateway reverse proxy
+    on customer-deployed U-Capture)
+  configurable_per_deployment: true
+  note: >-
+    Because U-Capture and the BAIC distribution are customer-deployed behind a customer- or
+    Uniphore-operated gateway, any effective limit is a deployment setting rather than a
+    published product contract. A prospective integrator cannot learn their limit from the
+    public documentation.
+response_headers:
+  documented: false
+  observed: false
+  standard_headers: null
+  legacy_headers: null
+  retry_after: null
+  note: >-
+    No RateLimit-*, X-RateLimit-* or Retry-After header is documented on any public Uniphore
+    surface, and none was returned by api.uniphore.com on anonymous probes (2026-08-14).
+exhaustion:
+  status_code: null
+  body: null
+  note: Undocumented; not observable without credentials and a routed tenant.
+quota_visibility:
+  usage_metrics_api: >-
+    U-Capture ships a Usage Metrics API whose reports can cover the Output (APIs) side of the
+    system — reportType ConsumedApis — on a Daily / Weekly / Monthly / Yearly schedule. That is
+    after-the-fact consumption reporting delivered to a configured endpoint, not a runtime
+    rate-limit signal an agent can react to.
+  source: https://support-rb.uniphore.com/conversa/DevelopConversa/DevelopUCaptureV2.0/UCaptureUsageMetricsAPI/API_Summary.htm
+evidence:
+- url: https://support-rb.uniphore.com/conversa/DevelopConversa/DevelopUCaptureV2.0/UCaptureRESTAPIs/API_Gateway.htm
+  status: 200
+- url: https://support-rb.uniphore.com/conversa/DevelopConversa/DevelopUCaptureV2.0/UCaptureUsageMetricsAPI/API_Summary.htm
+  status: 200
+- url: https://api.uniphore.com/v1/openapi.json
+  status: 404
+  note: Kong "no Route matched with those values"; no rate-limit headers on the response.

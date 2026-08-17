@@ -1,0 +1,63 @@
+generated: '2026-08-14'
+method: searched
+source: https://www.uniphore.com/sitemap_index.xml + https://www.uniphore.com/page-sitemap.xml
+  (96 URLs, none of them a pricing page) + https://www.uniphore.com/pricing/ (HTTP 404)
+name: Uniphore Plans & Pricing
+plan_count: 0
+plans: []
+pricing_model:
+  type: contact-sales
+  self_serve: false
+  free_tier: false
+  trial: false
+  published_prices: false
+  note: >-
+    Uniphore publishes no pricing page, no plan tiers and no self-serve sign-up. The
+    company's own page sitemap (96 URLs, fetched 2026-08-14) contains no pricing, plans
+    or packages URL; /pricing/, /pricing and /plans/ all return HTTP 404. Every
+    commercial call to action on uniphore.com routes to a demo request or the contact
+    form. Commercial terms live in the Master Service Agreement, the SLA and the order
+    form, which are published as legal documents rather than as prices.
+api_pricing:
+  published: false
+  metered: false
+  note: >-
+    No API metering, per-call price, credit pack or usage quota is published for the
+    Business AI Cloud platform API or for the U-Capture REST APIs. U-Capture does ship a
+    Usage Metrics API that reports both captured-call volume and consumed-API volume on a
+    configurable schedule, which is the instrumentation a commercial meter would sit on
+    top of — but no rate card is attached to it in public documentation.
+licensing:
+  note: >-
+    U-Capture is licence-keyed rather than plan-tiered: the U-Capture Licence API applies,
+    updates, verifies and reports usage against licences held by a U-Capture Tenant, and
+    the docs distinguish three product editions — U-Capture Enterprise (all APIs),
+    U-Capture Connect and U-Capture Capture (reduced API set by default) — with the
+    entitlement set defined in the customer's Solution Design Document or Product
+    Specification, not on the public web.
+  editions:
+  - name: U-Capture Enterprise
+    api_access: all APIs
+  - name: U-Capture Connect
+    api_access: subset; per Solution Design Document
+  - name: U-Capture Capture
+    api_access: subset; per Solution Design Document
+  source: https://support-rb.uniphore.com/conversa/DevelopConversa/DevelopUCaptureV2.0/DevelopUCapture/DevelopUCapture.htm
+commercial_documents:
+- type: MasterServiceAgreement
+  url: https://www.uniphore.com/legal/msa/
+- type: ServiceLevelAgreement
+  url: https://www.uniphore.com/legal/sla/
+- type: DataProcessingAgreement
+  url: https://www.uniphore.com/legal/dpa/
+evidence:
+- url: https://www.uniphore.com/pricing/
+  status: 404
+- url: https://www.uniphore.com/plans/
+  status: 404
+- url: https://www.uniphore.com/page-sitemap.xml
+  status: 200
+- url: https://www.uniphore.com/contact/
+  status: 200
+- url: https://support-rb.uniphore.com/conversa/DevelopConversa/DevelopUCaptureV2.0/DevelopUCapture/DevelopUCapture.htm
+  status: 200

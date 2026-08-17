@@ -1,0 +1,49 @@
+generated: '2026-08-14'
+method: searched
+source: https://www.uniphore.com/platform/business-ai-cloud/agentic-layer/
+status: none
+summary: >-
+  Uniphore publishes no Model Context Protocol server — no hosted endpoint, no stdio package, no
+  registry listing, and no MCP documentation. Searches of the docs, the github.com/uniphore
+  organisation (3 public repos, none MCP-related), npm and the public MCP registries returned
+  nothing first-party.
+acronym_collision:
+  finding: >-
+    Uniphore's marketing uses "MCP" to mean something else. The Agentic Layer page reads: "Work
+    seamlessly with external agents and tools using Uniphore's Multi-Agent Collaboration Protocol
+    (MCP)." That is Uniphore's own multi-agent orchestration concept, not Anthropic's Model
+    Context Protocol, and it is neither specified nor documented publicly. Secondary coverage
+    that describes Uniphore as "MCP-based" is repeating this collision. Do not score, index or
+    link Uniphore as shipping a Model Context Protocol server on the strength of that sentence.
+  quote: Work seamlessly with external agents and tools using Uniphore's Multi-Agent Collaboration
+    Protocol (MCP).
+  source: https://www.uniphore.com/platform/business-ai-cloud/agentic-layer/
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: unknown
+  verified: searched
+tools: []
+candidate_tools_note: >-
+  No candidate tool list is derived. Uniphore publishes no OpenAPI, and the U-Capture REST API
+  documentation describes requests in prose ("Search Metadata", "Get Media") without paths,
+  parameters or schemas — deriving tools from it would produce input schemas that do not exist.
+  The documented API families are recorded in conventions/uniphore-conventions.yml and the entity
+  graph in data-model/uniphore-ucapture-data-model.yml instead.
+pointer_policy: >-
+  No type: MCPServer pointer is emitted in apis.yml. The pointer asserts that the provider ships
+  an MCP server; Uniphore does not.
+x-evidence:
+- url: https://www.uniphore.com/platform/business-ai-cloud/agentic-layer/
+  http_status: 200
+  fetched: '2026-08-14'
+- url: https://api.github.com/orgs/uniphore/repos
+  http_status: 200
+  note: 3 public repos — baic-docs, chronos-releases, .github. No MCP server.
+  fetched: '2026-08-14'
+- url: https://mcp.uniphore.com
+  http_status: null
+  note: NXDOMAIN.
+  fetched: '2026-08-14'

@@ -1,0 +1,81 @@
+generated: '2026-08-14'
+method: searched
+source: https://support-rb.uniphore.com/conversa/DevelopConversa/DevelopUCaptureV2.0/UCaptureHealthMonitoringAPIs/API_Overview.htm
+spec_type: none
+asyncapi_published: false
+name: Uniphore U-Capture event + alert surface
+summary: >-
+  Uniphore publishes no AsyncAPI document, but the U-Capture documentation does describe a real,
+  configurable outbound event surface: Health Monitoring "Alert Configurations" deliver system
+  health alerts to a customer-defined WEBHOOK URL or to an SNMP v3 trap receiver. The
+  configuration surface is a REST API (create / update / delete / get alert configurations, plus
+  a POST that fires a test alert to every configured endpoint), and alerts can be filtered per
+  configuration so different endpoints receive different alert classes. This is captured as a
+  webhook catalog, not as a fabricated AsyncAPI — no event schema, payload example or channel
+  definition is published anywhere on Uniphore's public surface.
+webhooks:
+- name: health-monitoring-alert
+  direction: outbound
+  transport: webhook
+  delivery: HTTP POST to a customer-defined Webhook URL registered in an Alert Configuration
+  producers: [U-Capture Collectors, U-Capture Core Services]
+  severities: [information, warning, critical]
+  filtering: >-
+    Each Alert Configuration can restrict which alert types it receives; any number of
+    configurations may be defined.
+  payload_schema: undocumented
+  example_event:
+    known_status_code: 1002
+    meaning: File System Size Alert — the alert the Get Storage Details request parses capacity
+      out of (Media Store, Metadata Store, Event Store, Audit Store).
+  test_facility: >-
+    "Create & Send an Alert" (POST) creates and sends an alert to all configured endpoints; the
+    docs describe it explicitly as a setup-verification facility rather than for general use.
+  source: https://support-rb.uniphore.com/conversa/DevelopConversa/DevelopUCaptureV2.0/UCaptureHealthMonitoringAPIs/API_Overview.htm
+- name: health-monitoring-alert-snmp
+  direction: outbound
+  transport: snmp
+  delivery: SNMP v3 trap
+  mib: ea_redbox.mib
+  mib_availability: >-
+    Not published for download; the docs say to request the MIB file from Uniphore Support if it
+    was not supplied with the deployment.
+  payload_schema: defined by the MIB (not public)
+  source: https://support-rb.uniphore.com/conversa/DevelopConversa/DevelopUCaptureV2.0/UCaptureHealthMonitoringAPIs/API_Overview.htm
+unsupported_endpoint_types:
+- type: smtp-email
+  note: Shown in the Health Monitoring APIs as an alert endpoint type but documented as NOT
+    currently supported.
+- type: storage
+  note: Shown as an alert endpoint type but documented as NOT currently supported.
+related_event_surfaces:
+- name: Realtime Notifications
+  evidence: >-
+    "Realtime Notifications", "Realtime Streaming" and "Capture API and Subscriptions" appear as
+    audit Action Categories returned by the U-Capture Audit API, which confirms these subsystems
+    exist and are audited. No public topic documents their protocol, subscription model or
+    payloads, so nothing further is asserted here.
+  source: https://support-rb.uniphore.com/conversa/DevelopConversa/DevelopUCaptureV2.0/UCaptureAuditAPI/API_Summary.htm
+- name: Export policies
+  evidence: >-
+    The Export APIs define data endpoints (e.g. Microsoft Azure, Salesforce, Bloomberg) and the
+    Policy Configuration API schedules or triggers export of media, metadata and transcriptions
+    to them. This is scheduled/triggered data egress rather than an event stream, and is
+    recorded here for completeness.
+  source: https://support-rb.uniphore.com/conversa/DevelopConversa/DevelopUCaptureV2.0/UCaptureRESTAPIs/API_Summary.htm
+baic_platform:
+  event_surface: none-published
+  note: >-
+    The public BAIC Installation Guide documents no webhook, event or subscription surface for
+    the Business AI Cloud platform API. Outbound long-lived connections it does document are to
+    third parties (LaunchDarkly streaming, Datadog, Sentry), not Uniphore-published events.
+x-evidence:
+- url: https://support-rb.uniphore.com/conversa/DevelopConversa/DevelopUCaptureV2.0/UCaptureHealthMonitoringAPIs/API_Overview.htm
+  http_status: 200
+  fetched: '2026-08-14'
+- url: https://support-rb.uniphore.com/conversa/DevelopConversa/DevelopUCaptureV2.0/UCaptureHealthMonitoringAPIs/API_Summary.htm
+  http_status: 200
+  fetched: '2026-08-14'
+- url: https://support-rb.uniphore.com/conversa/DevelopConversa/DevelopUCaptureV2.0/UCaptureAuditAPI/API_Summary.htm
+  http_status: 200
+  fetched: '2026-08-14'

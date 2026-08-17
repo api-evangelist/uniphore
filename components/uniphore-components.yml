@@ -1,0 +1,72 @@
+generated: '2026-08-14'
+method: searched
+source: https://registry.npmjs.org/-/v1/search?text=uniphore
+name: Uniphore embeddable / client-side components
+summary: >-
+  Uniphore publishes no documented component library, element SDK or embed snippet on its own
+  developer surface. What exists is a small set of first-party npm packages authored by
+  "Uniphore" for the Interact conversation surface, one of which is a client-side chat UI. They
+  are solution-delivery artefacts from the contact-centre side of the business rather than a
+  supported, documented embed product, and none has been republished since 2024 — recorded here
+  so the distinction between "has an embeddable component" and "ships a component platform" is
+  visible.
+components:
+- name: uniphore-chat-ui
+  family: Interact conversation UI
+  kind: client-side chat UI
+  framework: Vue 3 (Vite)
+  registry: npm
+  version: 3.1.0
+  published: '2024-02-22'
+  url: https://www.npmjs.com/package/uniphore-chat-ui
+  install: npm install uniphore-chat-ui
+  runtime_dependencies: [axios]
+  documentation: none
+  documentation_note: >-
+    The published package description is still the Vue+Vite scaffold default ("This template
+    should help get you started developing with Vue 3 in Vite"); there is no README-level usage
+    documentation, no props/events reference and no hosted example.
+  official: true
+loaders:
+- name: uniphore-interact-chat-conversation-facilitator
+  role: browser/server-side facilitator that queries the Interact Conversation API and parses the
+    HTML response into texts and buttons for a chat surface to render.
+  registry: npm
+  version: 3.0.0
+  published: '2023-06-13'
+  url: https://www.npmjs.com/package/uniphore-interact-chat-conversation-facilitator
+  official: true
+- name: uniphore-microsoft-chat-bot-server
+  role: server that hosts a Microsoft Bot Framework bot and relays user text/data to a chat
+    conversation facilitator, rendering the returned texts and buttons.
+  registry: npm
+  version: 4.0.6
+  published: '2024-04-16'
+  url: https://www.npmjs.com/package/uniphore-microsoft-chat-bot-server
+  official: true
+  note: A server, not a browser component; listed because it is part of the same embed chain.
+hosted_surfaces:
+- name: forge-ui
+  kind: first-party web application shipped with the BAIC distribution
+  embeddable: false
+  note: >-
+    forge-ui is the BAIC console served by the customer's own deployment behind nginx, with a
+    Content-Security-Policy whose origin allow-list is extended per deployment
+    (forge-ui.csp.extraOrigins). It is an application, not a component library, and Uniphore
+    documents no iframe embed or JS element for it.
+  source: https://uniphore.github.io/baic-docs/
+not_found:
+  web_components: none published
+  design_system: none published
+  embed_snippet: none published
+  element_library: none published
+x-evidence:
+- url: https://registry.npmjs.org/uniphore-chat-ui
+  http_status: 200
+  fetched: '2026-08-14'
+- url: https://registry.npmjs.org/-/v1/search?text=uniphore
+  http_status: 200
+  fetched: '2026-08-14'
+- url: https://uniphore.github.io/baic-docs/
+  http_status: 200
+  fetched: '2026-08-14'

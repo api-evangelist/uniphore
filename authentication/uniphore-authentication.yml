@@ -1,4 +1,4 @@
-generated: '2026-08-02'
+generated: '2026-08-14'
 method: searched
 source: https://uniphore.us.auth0.com/.well-known/openid-configuration
 docs: https://uniphore.github.io/baic-docs/
@@ -83,6 +83,28 @@ schemes:
   header: 'Authorization: Bearer <token>'
   sources:
   - https://uniphore.github.io/baic-docs/
+- name: ucaptureIdentityServer
+  type: openIdConnect
+  product: U-Capture
+  description: >-
+    U-Capture (Red Box heritage) runs its own Identity Server. External identity providers are
+    registered through the Identity Server API, and the documentation names four supported
+    federation protocols for external user login and SSO: OpenID Connect, OAuth, WS-Federation
+    and SAML. Authorisation inside U-Capture is expressed as Roles plus Claim Maps that bind
+    external identity claims to U-Capture access privileges; Tenant records are readable through
+    the Identity Server Read API but configurable only by Uniphore engineers. All API
+    microservices sit behind an API Gateway that performs authentication and authorisation, SSL
+    termination and whitelisting.
+  protocols: [OpenID Connect, OAuth, WS-Federation, SAML]
+  authorization_model: [Roles, Users, Claim Maps]
+  directory_integration: LDAP (LDAP Configuration API)
+  token_details_published: false
+  token_details_note: >-
+    No token endpoint, grant type, header form or scope list is published for U-Capture; the docs
+    describe features and functions, not the wire contract.
+  sources:
+  - https://support-rb.uniphore.com/conversa/DevelopConversa/DevelopUCaptureV2.0/UCaptureIdentityServerAPIs/API_Overview.htm
+  - https://support-rb.uniphore.com/conversa/DevelopConversa/DevelopUCaptureV2.0/UCaptureRESTAPIs/API_Gateway.htm
 - name: oidcSso
   type: openIdConnect
   description: >-
@@ -93,6 +115,10 @@ schemes:
   sources:
   - https://uniphore.github.io/baic-docs/
 x-evidence:
+- url: https://support-rb.uniphore.com/conversa/DevelopConversa/DevelopUCaptureV2.0/UCaptureIdentityServerAPIs/API_Overview.htm
+  http_status: 200
+  content_type: text/html
+  fetched: '2026-08-14'
 - url: https://uniphore.us.auth0.com/.well-known/openid-configuration
   http_status: 200
   content_type: application/json

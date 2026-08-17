@@ -1,4 +1,4 @@
-generated: '2026-08-02'
+generated: '2026-08-14'
 method: searched
 source: https://uniphore.us.auth0.com/.well-known/openid-configuration
 compliance_page: https://trust.uniphore.com/
@@ -49,10 +49,48 @@ standards:
   evidence: /.well-known/api-catalog returns 404 on every Uniphore host probed.
 - id: openapi
   conforms: false
-  evidence: No OpenAPI/Swagger document found on any Uniphore host (see review notes).
+  evidence: >-
+    No OpenAPI/Swagger document found. Re-probed 2026-08-14 across api.uniphore.com (Kong; every
+    path answers "no Route matched with those values"), www.uniphore.com, uniphore.github.io and
+    the newly-found support-rb.uniphore.com docs portal. The U-Capture docs state that individual
+    HTTP request details "are provided within the APIs" — i.e. inside the running deployment —
+    so the wire contract exists but is not published.
 - id: asyncapi
   conforms: false
-  evidence: No AsyncAPI document or public event/webhook catalog found.
+  evidence: >-
+    No AsyncAPI document is published. Re-checked 2026-08-14 — but a real webhook surface WAS
+    found this round and is captured in asyncapi/uniphore-ucapture-webhooks.yml, so the absence
+    is of the specification, not of the events.
+- id: webhooks
+  conforms: true
+  evidence: >-
+    U-Capture Health Monitoring "Alert Configurations" deliver alerts to a customer-defined
+    webhook URL (or an SNMP v3 trap receiver), configured through a documented REST API with a
+    test-fire request. Source
+    https://support-rb.uniphore.com/conversa/DevelopConversa/DevelopUCaptureV2.0/UCaptureHealthMonitoringAPIs/API_Overview.htm
+- id: snmp-v3
+  conforms: true
+  evidence: >-
+    Health monitoring alerts can be trapped via SNMP v3 using Uniphore's ea_redbox.mib, supplied
+    on request rather than published.
+- id: saml
+  conforms: true
+  evidence: >-
+    U-Capture Identity Server APIs document external identity provider integration over OpenID
+    Connect, OAuth, WS-Federation and SAML.
+- id: ws-federation
+  conforms: true
+  evidence: Named alongside OIDC/OAuth/SAML in the U-Capture Identity Server API overview.
+- id: ldap
+  conforms: true
+  evidence: >-
+    U-Capture ships an LDAP Configuration API covering LDAP server configuration and
+    internal-to-external field mapping.
+- id: model-context-protocol
+  conforms: false
+  evidence: >-
+    No MCP server, endpoint or package exists. Uniphore's marketing "MCP" expands to Multi-Agent
+    Collaboration Protocol, a different thing — see mcp/uniphore-mcp.yml.
 - id: rfc9457-problem-details
   conforms: unknown
   evidence: No public error reference or spec to inspect.
@@ -111,6 +149,15 @@ x-evidence:
 - url: https://uniphore.us.auth0.com/.well-known/openid-configuration
   http_status: 200
   fetched: '2026-08-02'
+- url: https://support-rb.uniphore.com/conversa/DevelopConversa/DevelopUCaptureV2.0/UCaptureHealthMonitoringAPIs/API_Overview.htm
+  http_status: 200
+  fetched: '2026-08-14'
+- url: https://support-rb.uniphore.com/conversa/DevelopConversa/DevelopUCaptureV2.0/UCaptureIdentityServerAPIs/API_Overview.htm
+  http_status: 200
+  fetched: '2026-08-14'
+- url: https://api.uniphore.com/openapi.json
+  http_status: 404
+  fetched: '2026-08-14'
 - url: https://trust.uniphore.com/
   http_status: 403
   note: Cloudflare interstitial on curl; content confirmed via rendering fetch.
