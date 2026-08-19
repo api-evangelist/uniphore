@@ -21,7 +21,7 @@ url: https://raw.githubusercontent.com/api-evangelist/uniphore/refs/heads/main/a
 image: https://www.uniphore.com/wp-content/uploads/2025/12/cropped-Uniphore–Bug–Gradient–Light-192x192.webp
 x-type: company
 x-source: harvest:secondary-market
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 created: '2026-08-02'
 modified: '2026-08-14'
 tags:
