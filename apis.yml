@@ -31,6 +31,19 @@ tags:
 - Conversational AI
 - Customer Data Platform
 - Contact Center
+- Machine-Learning
+- Large Language Models
+- Enterprise Software
+- Automation
+- Customer Experience
+- Knowledge-Management
+tags_raw:
+- Company
+- Artificial Intelligence
+- Agents
+- Conversational AI
+- Customer Data Platform
+- Contact Center
 - Machine Learning
 - Large Language Models
 - Enterprise Software
@@ -50,6 +63,11 @@ apis:
   humanURL: https://uniphore.github.io/baic-docs/
   baseURL: https://api.uniphore.com
   tags:
+  - Artificial Intelligence
+  - Agents
+  - Large Language Models
+  - Knowledge-Management
+  tags_raw:
   - Artificial Intelligence
   - Agents
   - Large Language Models
