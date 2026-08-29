@@ -18,6 +18,18 @@ description: 'Uniphore is an enterprise AI company — "The Business AI Company"
   portal at support-rb.uniphore.com, which documents fifteen REST API families plus a
   webhook/SNMP health-alert surface without publishing a machine-readable contract.'
 url: https://raw.githubusercontent.com/api-evangelist/uniphore/refs/heads/main/apis.yml
+deliveryModel:
+  model: unknown
+  open_source: unknown
+  commercial: true
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - pricing
+  - repository-unlicensed
+  generated: '2026-08-28'
+  method: derived
 image: https://www.uniphore.com/wp-content/uploads/2025/12/cropped-Uniphore–Bug–Gradient–Light-192x192.webp
 x-type: company
 x-source: harvest:secondary-market
@@ -143,6 +155,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: IssueTracker
+  url: https://github.com/uniphore/baic-docs/issues
 - type: Website
   url: https://www.uniphore.com/
 - type: DeveloperPortal
