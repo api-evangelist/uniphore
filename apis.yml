@@ -19,16 +19,19 @@ description: 'Uniphore is an enterprise AI company — "The Business AI Company"
   webhook/SNMP health-alert surface without publishing a machine-readable contract.'
 url: https://raw.githubusercontent.com/api-evangelist/uniphore/refs/heads/main/apis.yml
 deliveryModel:
-  model: unknown
+  model: saas
+  license_evidence:
+    not_product:
+    - uniphore/baic-docs
   open_source: unknown
   commercial: true
   callable_host: false
-  label: Delivery model not determined — needs a product licence on record
+  label: Hosted service · you call their endpoint
   confidence: low
   source:
   - pricing
-  - repository-unlicensed
-  generated: '2026-08-28'
+  - repository-not-product
+  generated: '2026-09-25'
   method: derived
 accessModel:
   pricing: unknown
@@ -58,12 +61,12 @@ tags:
 - Conversational AI
 - Customer Data Platform
 - Contact Center
-- Machine-Learning
+- Machine Learning
 - LLM
 - Enterprise Software
 - Automation
 - Customer Experience
-- Knowledge-Management
+- Knowledge Management
 tags_raw:
 - Company
 - Artificial Intelligence
@@ -77,6 +80,8 @@ tags_raw:
 - Automation
 - Customer Experience
 - Knowledge Management
+- Machine-Learning
+- Knowledge-Management
 apis:
 - name: Uniphore Business AI Cloud (BAIC) Platform API
   description: 'The Business AI Cloud platform API. The publicly documented surface
@@ -93,12 +98,13 @@ apis:
   - Artificial Intelligence
   - Agents
   - LLM
-  - Knowledge-Management
+  - Knowledge Management
   tags_raw:
   - Artificial Intelligence
   - Agents
   - Large Language Models
   - Knowledge Management
+  - Knowledge-Management
   properties:
   - type: Documentation
     url: https://uniphore.github.io/baic-docs/
